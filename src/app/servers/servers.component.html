@@ -8,6 +8,20 @@ if we want to do html to typescript then we do event binding -->
 -->
  <!-- event binding it is done using () brackets it i s used to communicate from html to typescript -->
 
+<!-- passing data with $event (input)and using it with (<HTMLInputElement>event.target).value -->
+
+ <!-- we use [(ngModel)]  for two way data binding which will change html and type script both -->
+ <!-- 2way data binding change in the model make change in the view change in the view change in the model -->
+ <!-- EVENTBINDING -->
+ <label>Server name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p> {{ serverName }} </p>
+
+<!-- two way data binding -->
+<label>Server name</label>
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
+<p> {{ serverName }} </p>
 
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
   Add Server
