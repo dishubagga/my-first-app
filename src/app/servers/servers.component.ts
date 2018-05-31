@@ -11,8 +11,9 @@ import { VariableAst } from '@angular/compiler';
 export class ServersComponent implements OnInit {
   allowNewServer=false;
   serverCreationStatus="No server was created!";
-  serverName= "dishu";
-  a="";
+  serverName= "";
+  serverCreated=false;
+  
   constructor() { 
     setTimeout(()=>{
       this.allowNewServer=true;
@@ -22,7 +23,8 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
   onCreateServer(){
-    this.serverCreationStatus="Server created!";
+    this.serverCreated=true;
+    this.serverCreationStatus="Server created! and Server name is " +this.serverName;
   }
   onUpdateServerName(event: Event){
     this.serverName=(<HTMLInputElement>event.target).value;

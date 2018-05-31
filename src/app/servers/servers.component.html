@@ -1,3 +1,5 @@
+<!-- components are building block and key feature of angular we divide the page into
+ different components they are re usable -->
 <!-- data binding is the communication between html and type script 
 if we want typescript to html then we do string interpolitaion or property binding 
 if we want to do html to typescript then we do event binding -->
@@ -12,21 +14,42 @@ if we want to do html to typescript then we do event binding -->
 
  <!-- we use [(ngModel)]  for two way data binding which will change html and type script both -->
  <!-- 2way data binding change in the model make change in the view change in the view change in the model -->
+ 
+ <!-- 
+   Directives are the instruction in the dom 
+ components are directive with templates
+ <p appTurnGreen>ahashas</p>
+ it will find 
+ @Directive({
+   selector:'[appTurnGreen]'
+ })
+ export class TurnGreenDirective{
+
+ } -->
+<!-- 
+we use ng if built in dirctive and for else we put #noServe we can see below and
+used it bu ng-template for else condition  and ng if is structural directive it donot add
+or remove element they only change the element they were placed on
+-->
+
  <!-- EVENTBINDING -->
- <label>Server name</label>
+ <!-- <label>Server name</label>
 <input type="text" class="form-control" (input)="onUpdateServerName($event)">
-<p> {{ serverName }} </p>
+<p> {{ serverName }} </p> -->
 
 <!-- two way data binding -->
 <label>Server name</label>
 <input type="text" class="form-control" [(ngModel)]="serverName">
 
-<p> {{ serverName }} </p>
-
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
   Add Server
 </button>
-<p>{{ serverCreationStatus }}</p>
+<br>
+<p *ngIf="serverCreated; else noServer" >Server created and its name is {{ serverName }} </p>
+<ng-template #noServer>
+  No server was created!  
+</ng-template>
+<!-- <p>{{ serverCreationStatus }}</p> -->
 <!-- <p>{{ allowNewServer }}</p> string interpolation
 <p [innerText]=" allowNewServer "></p> property binding--> 
 <app-server></app-server>
