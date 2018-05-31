@@ -1,2 +1,20 @@
+<!-- data binding is the communication between html and type script 
+if we want typescript to html then we do string interpolitaion or property binding 
+if we want to do html to typescript then we do event binding -->
+
+<!-- property binding here we use disabled in square brackets because we do its proterty binding here
+  use string interpolation for outputiing and print some text in html
+  use property binding if we want to change some property then use property binding 
+-->
+ <!-- event binding it is done using () brackets it i s used to communicate from html to typescript -->
+
+
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
+  Add Server
+</button>
+<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ allowNewServer }}</p> string interpolation
+<p [innerText]=" allowNewServer "></p> property binding--> 
 <app-server></app-server>
 <app-server></app-server>
+
