@@ -1,8 +1,8 @@
 <!-- components are building block and key feature of angular we divide the page into
  different components they are re usable -->
 <!-- data binding is the communication between html and type script 
-if we want typescript to html then we do string interpolitaion or property binding 
-if we want to do html to typescript then we do event binding -->
+if we want coomunicate from typescript to html then we do string interpolitaion or property binding 
+if we want to do communicate from  html to typescript then we do event binding -->
 
 <!-- property binding here we use disabled in square brackets because we do its proterty binding here
   use string interpolation for outputiing and print some text in html
@@ -32,6 +32,8 @@ used it bu ng-template for else condition  and ng if is structural directive it 
 or remove element they only change the element they were placed on
 -->
 
+<!-- ng for to create more -->
+
  <!-- EVENTBINDING -->
  <!-- <label>Server name</label>
 <input type="text" class="form-control" (input)="onUpdateServerName($event)">
@@ -52,6 +54,6 @@ or remove element they only change the element they were placed on
 <!-- <p>{{ serverCreationStatus }}</p> -->
 <!-- <p>{{ allowNewServer }}</p> string interpolation
 <p [innerText]=" allowNewServer "></p> property binding--> 
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+
 

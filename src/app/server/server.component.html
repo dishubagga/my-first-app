@@ -1,1 +1,8 @@
-<h4>hey the serverId is {{ serverId}} and server status is {{ serverStatus }}</h4>
+<!-- 
+ng style allow us to dynamically add a style 
+ng class used to dynamically add or remove css classes
+-->
+
+<p [ngStyle]="{backgroundColor:getColor()}"
+   [ngClass]="{online : serverStatus === 'online'}">
+hey the serverId is {{ serverId}} and server status is {{ serverStatus }}</p>
